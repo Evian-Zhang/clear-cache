@@ -1,6 +1,5 @@
+#![doc = include_str!("../README.md")]
 #![no_std]
-
-//! Taken from https://github.com/llvm/llvm-project/blob/main/compiler-rt/lib/builtins/clear_cache.c
 
 #[cfg(target_os = "linux")]
 mod linux;
@@ -17,6 +16,15 @@ mod macos;
 #[cfg(target_os = "macos")]
 use macos::*;
 
+/// Flush CPU's instruction cache at given range.
+///
+/// Return `false` if the cache is not successfully cleared.
+///
+/// # Safety
+///
+/// It seems that this function should be safe. However, the complexity of certain
+/// instructions and syscalls make it difficult to guarantee that this function is totally
+/// safe.
 pub unsafe fn clear_cache<T>(start: *const T, end: *const T) -> bool {
     os_arch_clear_cache(start, end)
 }
