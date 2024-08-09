@@ -2,6 +2,18 @@
 name = "clear-cache"
 version = "0.1.0"
 edition = "2021"
+authors = ["Evian-Zhang <evianzhang1999@163.com>"]
+license = "MIT OR Apache-2.0"
+description = "A native implementation of `__builtin___clear_cache` without dependency of GCC/Clang."
+homepage = "https://github.com/Evian-Zhang/clear-cache"
+documentation = "https://docs.rs/clear-cache"
+repository = "https://github.com/Evian-Zhang/clear-cache"
+readme = "README.md"
+keywords = ["cache", "clear-cache"]
+categories = ["no-std"]
+
+[badges]
+maintenance = { status = "actively-developed" }
 
 [target.'cfg(target_os = "linux")'.dependencies]
 libc = { version = "0.2", default-features = false }
