@@ -67,7 +67,7 @@ pub(crate) unsafe fn os_arch_clear_cache<T>(start: *const T, end: *const T) -> b
 }
 #[cfg(target_arch = "arm")]
 pub(crate) unsafe fn os_arch_clear_cache<T>(start: *const T, end: *const T) -> bool {
-    const __ARM_NR_CACHEFLUSH: i64 = 0x0f0002;
+    const __ARM_NR_CACHEFLUSH: i32 = 0x0f0002;
     let res = libc::syscall(
         __ARM_NR_CACHEFLUSH,
         start as usize as u64,
