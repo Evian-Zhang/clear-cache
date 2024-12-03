@@ -1,9 +1,9 @@
 #![doc = include_str!("../README.md")]
 #![no_std]
 
-#[cfg(target_os = "linux")]
+#[cfg(any(target_os = "linux", target_os = "android"))]
 mod linux;
-#[cfg(target_os = "linux")]
+#[cfg(any(target_os = "linux", target_os = "android"))]
 use linux::*;
 
 #[cfg(target_os = "windows")]
