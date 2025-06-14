@@ -30,6 +30,7 @@ Current CI-tested platforms:
     * `aarch64-unknown-linux-gnu`
     * `riscv64gc-unknown-linux-gnu`
     * `loongarch64-unknown-linux-gnu`
+    * `aarch64-linux-android`
 * macOS
 
     * `aarch64-apple-darwin`
@@ -37,3 +38,5 @@ Current CI-tested platforms:
 
     * `x86_64-pc-windows-msvc`
     * `i686-pc-windows-msvc`
+
+Note that it seems that `clear-cache` works in `armv7-linux-androideabi`, but due to a bug in QEMU's arm code (see [#2](https://github.com/Evian-Zhang/clear-cache/issues/2)), we cannot test it in CI.

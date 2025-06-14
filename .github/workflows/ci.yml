@@ -53,7 +53,7 @@ jobs:
           riscv64gc-unknown-linux-gnu,
           loongarch64-unknown-linux-gnu,
           aarch64-linux-android,
-          armv7-linux-androideabi,
+          # armv7-linux-androideabi, # Wait for QEMU-arm's bug
         ]
     steps:
     - name: checkout
